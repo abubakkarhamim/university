@@ -90,8 +90,8 @@
 
     .buttons {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 12px;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
     }
 
     button {
@@ -105,6 +105,7 @@
       cursor: pointer;
       font-family: 'poppins';
       transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      white-space: nowrap;
     }
 
     button:hover {
@@ -112,6 +113,20 @@
       color: var(--background-color);
       transform: translateY(-2px);
       box-shadow: 0 5px 15px rgba(0, 170, 255, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .buttons {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      .card {
+        padding: 30px;
+      }
     }
   </style>
 </head>
@@ -125,14 +140,14 @@
         <input type="text" id="uniName" placeholder="e.g., 'University of Toronto'">
       </div>
       <div class="buttons">
-        <button onclick="search('international student entry requirements')">Entry Requirements</button>
+        <button onclick="search('international student entry requirements')">International Entry Requirements</button>
+        <button onclick="search('Bangladesh student entry requirements for undergraduates')">Bangladesh Entry Requirements</button>
         <button onclick="search('ranking')">Ranking</button>
         <button onclick="search('tuition fee')">Tuition Fee</button>
-        <button onclick="search('English taught courses')">English Courses</button>
+        <button onclick="search('English taught courses')">English Taught Courses</button>
         <button onclick="search('Philosophy courses')">Philosophy</button>
         <button onclick="search('Economics courses')">Economics</button>
         <button onclick="search('Philosophy Politics Economics')">PPE</button>
-        <button onclick="search('Bangladesh student entry requirements for undergraduates')">BD Requirements</button>
       </div>
     </div>
   </div>
